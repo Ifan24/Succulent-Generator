@@ -1,7 +1,7 @@
 import torch
 from math import log2
 
-START_TRAIN_AT_IMG_SIZE = 128
+START_TRAIN_AT_IMG_SIZE = 64
 DATASET = 'succulents'
 CHECKPOINT_GEN = "generator.pth"
 CHECKPOINT_CRITIC = "critic.pth"
