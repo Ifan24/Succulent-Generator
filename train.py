@@ -125,6 +125,8 @@ def main():
     # initialize gen and disc, note: discriminator should be called critic,
     # according to WGAN paper (since it no longer outputs between [0, 1])
     # but really who cares..
+    
+    print('Using device:' + config.DEVICE)
     gen = Generator(
         config.Z_DIM, config.IN_CHANNELS, img_channels=config.CHANNELS_IMG
     ).to(config.DEVICE)
@@ -150,7 +152,11 @@ def main():
         load_checkpoint(
             config.CHECKPOINT_CRITIC, critic, opt_critic, config.LEARNING_RATE,
         )
-
+    if config.GENERATE_EXAMPLE:
+        print("Generating examples...")
+        generate_examples(gen, int(log2(256 / 4)))
+        return 0
+    
     gen.train()
     critic.train()
 

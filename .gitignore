@@ -1,0 +1,9 @@
+archive.zip
+celeba_hq/
+succulents/
+succulents_raw/
+saved_examples/
+logs/
+critic.pth
+generator.pth
+
