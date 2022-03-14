@@ -23,9 +23,12 @@ real images
 
 
 check the [google drive](https://drive.google.com/drive/folders/1qxup4DrslHZfO0LAHTRfEU3fyHNPG8v5?usp=sharing) for more examples
-## Improvements
-1. The quality of the images can definitely be improved by training more epochs, it takes about 12 hrs to train on my laptop (Nvidia 1070 MAX Q), one epoch for training the model on 512x512 images takes about ~hr. 
-2. The dataset I gether has about 9000 images, I believed if more images are added the quality can also be improved, and some of the images are not very suitable to be included in the dataset as the size of original images are more than 2000x2000 and center crop it to 512x512 makes it looks less like a succulent. Additionally, the shape of different succulents vary a lot, I think it might result in generating more strange images, it might be better to have all the images to have some common features.
+
+## Potential improvements
+1. The quality of the images can definitely be improved by training more epochs, one epoch for training the model on 512x512 images takes about ~2hr in google colab. 
+2. The dataset I gether has about 9000 images, I believed if more good images are added the quality can also be improved, and some of the images in the dataset are not very suitable to be included as the size of original images are more than 2000x2000 and center crop it to 512x512 makes it looks less like a succulent. Additionally, the shape of different succulents vary a lot, I think it might result in generating more strange images, it might be better to have all the images to have some common features.
+3. Maybe ProGAN is not the best model for generating plant, seek other options like autoencoder or diffusion based network
+4. Automated the process of collecting data, use a scraper to collect the images and then process the images using an image classifier or something
 
 ## Credit
 Implementing the ProGAN based on this video
@@ -33,8 +36,6 @@ Implementing the ProGAN based on this video
 <a href="https://www.youtube.com/watch?v=nkQHASviYac
 " target="_blank"><img src="https://img.youtube.com/vi/nkQHASviYac/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
-
-The codes for model and the training are the same as in the video, I made some small modifications to the config and instead of generating 1024x1024 images it will only train the model to generate 512x512 images as it takes quite a long time to train.
 
 The succulents images I used in this project are mostly downloaded from shopping website, since most open source datasets I found for succulent are either has blurring images or just too small for this project.
 
